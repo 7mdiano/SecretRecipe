@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+    <style>
+        form{
+            width: 245px;
+            border: 3px solid black;
+            padding-bottom: 20px;
+            padding-left: 5px;
+        }
+        h3{
+            margin: 5px;
+        }
+        .inpNo{
+            margin-right: 5px;
+        }
+        .result{
+            width: 225px;
+        }
+    </style>
+<body>
+    <form action="#">
+        <h3>Enter integar search key</h3>
+        <input type="text" class="inpNo" id="inpNo"><button onclick="chkNo();">Search</button>
+        <br><br>
+        <h3>Result</h3>
+        <input type="text" class="result" id="result" onfocus="this.blur();" value=" ">
+    </form>
+    <script>
+        // The Event handler 
+        function chkNo(event){
+            var userNo = document.getElementById("inpNo");
+            // test condition
+            var No = userNo.value;
+            if (No>0& No <= 200 & No % 2 ==0) {
+                i = No /2;
+                document.getElementById("result").value = "The value exist at index "+ i ;
+                userNo.select();
+            }else{
+                document.getElementById("result").value = "The value doesn't exist in the array";
+            }
+        }
+    </script>
+</html>
